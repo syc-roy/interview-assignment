@@ -9,6 +9,7 @@ The goal of this assignment is to build a workflow for user to sign up account a
 5. (bonus) Create forget password page.
 6. (bonus) When user enters password wrong, direct user to forget password page.
 7. (bonus) Deploy the application to Heroku.
+8. (bonus) Add any missing funcitonalies not listed above but you feel they can provide better user experience.
 
 The knowledge you need to complete the tasks are
 * Javascript/Typescript
@@ -18,4 +19,10 @@ The knowledge you need to complete the tasks are
 * HTML
 * CSS
 
-Client side code is generated using angular-cli using Typescript. If you are not familiar with Typescript, it is a strong-type javascript dialet and you should be able to learn basic concepts and syntax to complete the task. Please use all resources you can find online to help you complete the task and commit as often as possible. Do not complete everything under one commit. 
+Client side code is generated using angular-cli using Typescript. If you are not familiar with Typescript, it is a strong-type javascript dialet and you should be able to learn basic concepts and syntax to complete the task. Please use all resources you can find online to help you complete the task.
+
+Tips:
+* Commit as many as possible. Do not complete everything under one commit.
+* To test REST api, you can use [postman](https://www.getpostman.com/) without writing client side code. 
+* Complete bonus points only after you finish all required tasks.
+  
