@@ -13,7 +13,7 @@ const cookieParser = require('cookie-parser')
 const session      = require('express-session')
 const configDB     = require('./config/database')
 const routes       = require('./routes')
-require('./config/passport')(passport);
+//require('./config/passport')(passport);
 
 mongoose.Promise = bluebird
 mongoose.connect(configDB.mongo.url)
@@ -23,6 +23,8 @@ app.use(morgan('dev'))
 app.use(cookieParser())
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
+
+app.set('view engine', 'ejs');// Add: setup ejs for templating
 
 app.use(session({ secret: 'somesecretmoresecretthanallsecrets' }))
 app.use(passport.initialize())
