@@ -1,13 +1,16 @@
 const User = require('../model/user/schema');
 const configAuth = require('./auth');
 
+const passport = require('pasport');
+const mongoose = require('mongoose');
+
 const FacebookStrategy = require('passport-facebook').Strategy;
 const TwitterStrategy = require('passport-twitter').Strategy;
 const GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
 const GitHubStrategy = require('passport-github').Strategy;
 
 module.exports = function(passport) {
-
+  
   passport.serializeUser(function(user, done) {
     done(null, user.id);
   });

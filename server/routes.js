@@ -1,6 +1,7 @@
 const path = require('path');
 const Router = require('express').Router;
 const router = new Router();
+const passport = require("passport");
 
 const user = require('./model/user/router');
 const food = require('./model/food/router');
@@ -52,13 +53,13 @@ router.get("/login", function(req, res){
 });
 
 router.post("/login", function(req, res){
-  let email = req.body.email;
-  let password = req.body.password;
-
-
-  
-  res.send('finissh');  
-
+  let input = {
+    "local": {
+      "email": req.body.email,
+      "password": req.body.password
+    }
+  }
+  res.send(input)
 });
 
 // logout route
