@@ -6,6 +6,7 @@ const environment  = process.env.NODE_ENV || 'dev'
 const helmet       = require('helmet')
 const morgan       = require('morgan')
 const passport     = require('passport')
+var LocalStrategy = require("passport-local")
 const bluebird     = require('bluebird')
 const mongoose     = require('mongoose')
 const bodyParser   = require('body-parser')
@@ -23,10 +24,12 @@ app.use(morgan('dev'))
 app.use(cookieParser())
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
+app.set("view engine", "ejs")
 
 app.use(session({ secret: 'somesecretmoresecretthanallsecrets' }))
 app.use(passport.initialize())
 app.use(passport.session())
+
 
 app.use(express.static(__dirname + '/../client/dist'))
 app.use('/', routes)
