@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 
 const userSchema = new Schema({
   local: {
-    email: String,
+    email: {type : String, unique: true},
     password: String
   },
   facebook: {
