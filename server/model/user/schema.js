@@ -1,10 +1,9 @@
 const mongoose = require('mongoose');
 const bcrypt   = require('bcrypt-nodejs');
-const Schema = mongoose.Schema;
 
-const userSchema = new Schema({
+const userSchema = new mongoose.Schema({
   local: {
-    email: String,
+    email: {type : String, unique: true},
     password: String
   },
   facebook: {
